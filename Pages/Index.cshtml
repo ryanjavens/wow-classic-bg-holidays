@@ -1,0 +1,64 @@
+﻿@page
+@model WowClassicBgCalendar.Pages.Calendar.IndexModel
+@{
+}
+
+<div class="text-center container">
+    <h1>Battleground Holidays</h1>
+</div>
+
+<div class="container-fluid mb-5">
+    <div id="bgCarousel" class="carousel slide show-neighbors" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+            <li data-target="#bgCarousel" data-slide-to="0"></li>
+            <li data-target="#bgCarousel" data-slide-to="1" class="active"></li>
+            <li data-target="#bgCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <div class="item__third">
+                    <img src="@Url.Content(@Model.previousWeek.imageUrl)" class="img-fluid" alt="@Model.previousWeek.name" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Previous Week</h5>
+                        <p>@Model.previousWeek.name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <div class="item__third">
+                    <img src="@Url.Content(@Model.currentWeek.imageUrl)" class="img-fluid" alt="@Model.currentWeek.name" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Current Week</h5>
+                        <p>@Model.currentWeek.name</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="item__third">
+                    <img src="@Url.Content(@Model.nextWeek.imageUrl)" class="img-fluid" alt="@Model.nextWeek.name" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Next Week</h5>
+                        <p>@Model.nextWeek.name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#bgCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#bgCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<div class="container">
+    <p>
+        For more info about BG holidays, see the links below:
+        <ul>
+            <li><a href="https://eu.forums.blizzard.com/en/wow/t/battleground-holidays-%E2%80%93-march-11/131617" target="_blank">Blue Post Announcement</a></li>
+            <li><a href="https://classic.wowhead.com/guides/wow-classic-battlegrounds-pvp#battleground-holidays-schedule" target="_blank">WoW Head article detailing bonuses</a></li>
+        </ul>
+    </p>
+</div>
